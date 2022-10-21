@@ -35,7 +35,7 @@ public class AdminRestController {
 
 
     @PostMapping("api/admin")
-    public ResponseEntity<User> registerNewUser(@RequestBody @Valid UserDTO userDTO) {
+    public ResponseEntity<UserDTO> registerNewUser(@RequestBody @Valid UserDTO userDTO) {
         userservice.addUser(convertToUser(userDTO));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
